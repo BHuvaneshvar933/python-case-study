@@ -32,7 +32,7 @@ def run_project():
     
     # Plot 1: Churn Distribution (Bar)
     plt.figure(figsize=(6,4))
-    sns.countplot(data=df, x='Churn', palette='viridis')
+    sns.countplot(data=df, x='Churn', hue='Churn', palette='viridis', legend=False)
     plt.title("Churn Distribution")
     plt.savefig(f"{output_dir}/1_Churn_Distribution_Bar.png")
     plt.close()
@@ -67,7 +67,7 @@ def run_project():
     
     # Plot 6: Spending Score vs Churn
     plt.figure(figsize=(8,5))
-    sns.boxplot(data=df, x='Churn', y='SpendingScore', palette='pastel')
+    sns.boxplot(data=df, x='Churn', y='SpendingScore', hue='Churn', palette='pastel', legend=False)
     plt.title("Spending Score vs Churn")
     plt.savefig(f"{output_dir}/6_SpendingScore_vs_Churn.png")
     plt.close()
